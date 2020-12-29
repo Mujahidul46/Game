@@ -138,3 +138,4 @@ if wants_to_play == 'yes':
 else:
     print()
     print('Okay, bye then... \n')
+input('Press ENTER to exit')
