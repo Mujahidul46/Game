@@ -9,6 +9,8 @@ def typewriter(text):
 
 # This function asks the user if they want to restart.
 def continue_prompt():
+    if health <= 0:
+        typewriter('You now have 0 health and lose the game.')
     print('\nDo you want to restart? (yes/no)')
     restart = input()
     return restart.lower() == 'yes'
@@ -35,7 +37,6 @@ if wants_to_play == 'yes':
             print()
             typewriter('The storm lasts for days and you have run out of food and water. You\'re lifeboat capsizes and you drown! \n')
             health -= 10
-            typewriter('You now have 0 health and lose the game.')
             if health <= 0 and continue_prompt():
                 continue
             else:
@@ -50,9 +51,8 @@ if wants_to_play == 'yes':
         ans = input()
         if ans.lower() == 'forest':
             print()
-            typewriter('ZAP!!! You take shelter under some trees and get struck by lightning. That was not a good idea. You lose 10 health.')
+            typewriter('ZAP!!! You take shelter under some trees and get struck by lightning. That was not a good idea. You lose 10 health. ')
             health -= 10
-            typewriter(' You now have 0 health and lose the game.')
             if health <= 0 and continue_prompt():
                 continue
             else:
@@ -65,9 +65,8 @@ if wants_to_play == 'yes':
             if ans == '1':
                 typewriter('\nAfter walking for what seemed like hours, you see a bright light at the end of the tunnel! FREEDOM!\n')
             elif ans == '2':
-                typewriter('\nYou get lost in the darkness and wish you chose another path! You died.')
+                typewriter('\nYou get lost in the darkness and wish you chose another path! You died. ')
                 health -= 10
-                typewriter(' You now have 0 health and lose the game.')
                 if health <= 0 and continue_prompt():
                     continue
                 else:
@@ -87,7 +86,6 @@ if wants_to_play == 'yes':
             print()
             typewriter('You hunt a rabbit and cook it. You ate some of it but suddenly hear a growling noise behind you!! You get attacked by a tiger but use your knife just in time to defend yourself. You lose 7 health. \n')
             health -= 7
-            typewriter('You now have 0 health and lose the game.')
             if health <= 0 and continue_prompt():
                 continue
             elif health > 0:
@@ -103,7 +101,6 @@ if wants_to_play == 'yes':
             print()
             typewriter('The people on the ship don\'t see you and you lose lots of energy (and hope). You faint from exhaustion, losing 3 health. \n')
             health -= 3
-            typewriter('You now have 0 health and lose the game.')
             if health <= 0 and continue_prompt():
                 continue
             elif health > 0:
@@ -122,7 +119,6 @@ if wants_to_play == 'yes':
             print()
             typewriter('On your way to the people, you get bitten by a venemous snake and lose 10 health!! ')
             health -= 10
-            typewriter('You now have 0 health and lose the game.')
             if health <= 0 and continue_prompt():
                 continue
             else:
@@ -130,7 +126,7 @@ if wants_to_play == 'yes':
         elif ans.lower() == 'hunt':
             print()
             typewriter('You successfully hunt a rabbit and survive the day. \nYou hear a rescue helicopter above and quickly light a fire. They come and rescue you. Congratulations! You survived with ' + str(health) + ' health remaining! \n')
-            print('Thank you for playing! \n')
+            print('Thank you for playing!')
             if continue_prompt():
                 continue
             else: 
