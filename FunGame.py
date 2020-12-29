@@ -52,7 +52,7 @@ if wants_to_play == 'yes':
             print()
             typewriter('ZAP!!! You take shelter under some trees and get struck by lightning. That was not a good idea. You lose 10 health.')
             health -= 10
-            typewriter('You now have 0 health and lose the game.')
+            typewriter(' You now have 0 health and lose the game.')
             if health <= 0 and continue_prompt():
                 continue
             else:
