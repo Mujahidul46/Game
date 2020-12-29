@@ -5,7 +5,7 @@ def typewriter(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.00)
+        time.sleep(0.05)
 
 # This function asks the user if they want to restart.
 def continue_prompt():
